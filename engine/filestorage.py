@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """ Defines a class FileStorage """
-import JSON
+import json
 
 
 class FileStorage:
@@ -17,20 +17,20 @@ class FileStorage:
 
     def new(self):
         """ sets in __objects the obj with key <obj class name>.id """
-        name = type(obj).__name__.id
-        type(self).__objects[name] = obj
+        name = type(obj).__name__
+        type(self).__objects["{}.{}".format(name, obj.id)] = obj
 
     def save(self):
         """ serializes __objects to the JSON file (path: __file_path) """
         file = type(self).__file_path
         with open(file, 'w', encoding='UTF8') as f:
-            JSON.dumps(type(self).__objects, f)
+            json.dumps(type(self).__objects, f)
 
     def reload(self):
         """ Deserializes JSON file to __objects """
         file = type(self).__file_path
         try:
             with open(file, encoding='UTF8') as f:
-                type(self).__objects = JSON.loads(file)
+                type(self).__objects = json.loads(file)
         except FileNotFoundError:
             return;
