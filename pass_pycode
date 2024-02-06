@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """ Displays greetings """
 
-def greet():
-	print("Good Day!\nHappy Coding!")
+
+def set():
+    a = 7
+    b = 6
