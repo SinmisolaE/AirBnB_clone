@@ -11,7 +11,7 @@ class BaseModel:
         for other classes """
 
     def __init__(self, *args, **kwargs):
-        """ Initializes attributes 
+        """ Initializes attributes
             addition *args and **kwargs should be used
             *args won't be used
         """

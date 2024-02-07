@@ -27,7 +27,10 @@ def parse(arg):
 class HBNBCommand(cmd.Cmd):
     """ Implementation of the command interpreter """
 
-    __classes = {"BasaModel"}
+    __classes = {
+                "BasaModel",
+                "User"
+                }
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
