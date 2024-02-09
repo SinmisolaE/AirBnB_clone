@@ -29,7 +29,12 @@ class HBNBCommand(cmd.Cmd):
 
     __classes = {
                 "BasaModel",
-                "User"
+                "User",
+                "Place",
+                "State",
+                "City",
+                "Amenity",
+                "Review"
                 }
     prompt = "(hbnb) "
 
