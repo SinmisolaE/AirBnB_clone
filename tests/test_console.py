@@ -44,11 +44,12 @@ class TestHBNBCommand_help(unittest.TestCase):
             "show": ("Usage: show <class> <id> or <class>.show(<id>)\n        "
                      "Display the string representation of a class instance of"
                      " a given id."),
-            "destroy": ("Usage: destroy <class> <id> or <class>.destroy(<id>)\n        "
+"destroy": ("Usage: destroy <class> <id> or <class>.destroy(<id>)\n"
+
                         "Delete a class instance of a given id."),
-            "all": ("Usage: all or all <class> or <class>.all()\n        "
-                    "Display string representations of all instances of a given class"
-                    ".\n        If no class is specified, displays all instantiated "
+"all": ("Usage: all or all <class> or <class>.all()\n"
+"Display string representations of all instances of a given class"                    
+".\n        If no class is specified, displays all instantiated "
                     "objects."),
             "count": ("Usage: count <class> or <class>.count()\n        "
                       "Retrieve the number of instances of a given class.")
@@ -57,11 +58,11 @@ class TestHBNBCommand_help(unittest.TestCase):
             for command, message in help_messages.items():
                 with self.subTest(command=command):
                     self.assertFalse(self.console.onecmd(f"help {command}"))
-                    self.assertEqual(message, output.getvalue().strip())
-			def test_help(self):
+self.assertEqual(message, output.getvalue().strip())
+def test_help(self):
     expected_output = ("Documented commands (type help <topic>):\n"
-                       "========================================\n"
-                       "EOF  all  count  create  destroy  help  quit  show  update")
+"==========================   ==============\n"                       
+"EOF  all  count  create  destroy  help  quit  show  update")
     with patch("sys.stdout", new=StringIO()) as output:
         self.assertFalse(HBNBCommand().onecmd("help"))
         self.assertEqual(expected_output, output.getvalue().strip())
